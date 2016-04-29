@@ -1,6 +1,6 @@
 local common = require("main.common")
 
-function add_res_button(self, y, width, height)
+function add_res_button(self, y, width, height, label)
 	local nodes = gui.clone_tree(self.template_node)
 	
 	local button = {
@@ -17,7 +17,11 @@ function add_res_button(self, y, width, height)
 	gui.set_position(button.node_bg, p)
 	
 	-- set correct res label
-	gui.set_text(button.node_label, tostring(width) .. "x" .. tostring(height))
+	if (label) then
+		gui.set_text(button.node_label, tostring(label) .. " ("..tostring(width) .. "x" .. tostring(height)..")")
+	else
+		gui.set_text(button.node_label, tostring(width) .. "x" .. tostring(height))
+	end
 end
 
 function init(self)
@@ -27,15 +31,16 @@ function init(self)
     self.template_node = gui.get_node("res-button/button")
     self.buttons = {}
 	self.resolutions = {
-		{ common.native_width, common.native_height },
-		{ common.native_width*1.5, common.native_height*1.5 },
-		{ common.native_width*2.0, common.native_height*2.0 },
-		{ common.native_width*2.5, common.native_height*2.5 }
+		{ common.native_width, common.native_height, "Default" },
+		{ common.native_width*1.5, common.native_height*1.5, "x1.5" },
+		{ common.native_width*2.0, common.native_height*2.0, "x2" },
+		{ common.native_width*2.5, common.native_height*2.5, "x2.5" },
+		{ common.native_width*3.0, common.native_height*3.0, "x3" }
 	}
 	
 	local y = -70
 	for k,v in pairs(self.resolutions) do
-		add_res_button(self, y, v[1], v[2])
+		add_res_button(self, y, v[1], v[2], v[3])
 		y = y - 40
 	end
 end
