@@ -1,0 +1,3 @@
+mesh: "/main/models/quad.dae"
+material: "/main/materials/comp.material"
+name: "unnamed"
