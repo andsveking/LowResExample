@@ -1,0 +1,88 @@
+collision_shape: ""
+type: COLLISION_OBJECT_TYPE_STATIC
+mass: 0.0
+friction: 0.1
+restitution: 0.5
+group: "default"
+mask: "default"
+embedded_collision_shape {
+  shapes {
+    shape_type: TYPE_BOX
+    position {
+      x: 150.0
+      y: -10.0
+      z: 0.0
+    }
+    rotation {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    }
+    index: 0
+    count: 3
+  }
+  shapes {
+    shape_type: TYPE_BOX
+    position {
+      x: -10.0
+      y: 100.0
+      z: 0.0
+    }
+    rotation {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    }
+    index: 3
+    count: 3
+  }
+  shapes {
+    shape_type: TYPE_BOX
+    position {
+      x: 310.0
+      y: 100.0
+      z: 0.0
+    }
+    rotation {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    }
+    index: 6
+    count: 3
+  }
+  shapes {
+    shape_type: TYPE_BOX
+    position {
+      x: 150.0
+      y: 210.0
+      z: 0.0
+    }
+    rotation {
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+    }
+    index: 9
+    count: 3
+  }
+  data: 150.0
+  data: 10.0
+  data: 10.0
+  data: 10.0
+  data: 100.0
+  data: 10.0
+  data: 10.0
+  data: 100.0
+  data: 10.0
+  data: 150.0
+  data: 10.0
+  data: 10.0
+}
+linear_damping: 0.0
+angular_damping: 0.0
+locked_rotation: false

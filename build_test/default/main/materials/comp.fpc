@@ -1,0 +1,19 @@
+#ifdef GL_ES
+precision mediump float;
+#endif
+#ifndef GL_ES
+#define lowp
+#define mediump
+#define highp
+#endif
+varying mediump vec4 position;
+varying mediump vec2 var_texcoord0;
+
+uniform lowp sampler2D tex0;
+
+
+void main() {	
+	gl_FragColor = texture2D(tex0, var_texcoord0.xy);
+
+}
+
